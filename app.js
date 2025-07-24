@@ -1,9 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-
-const productoRoutes = require('./routes/producto.routes');
-const categoriaRoutes = require('./routes/categoria.routes');
-const authRoutes = require('./routes/auth.routes');
+import express from 'express';
+import cors from 'cors';
+import productoRoutes from './routes/producto.routes.js';
+import categoriaRoutes from './routes/categoria.routes.js';
+import authRoutes from './routes/auth.routes.js';
 
 const app = express();
 
@@ -14,4 +13,4 @@ app.use('/api/productos', productoRoutes);
 app.use('/api/categorias', categoriaRoutes);
 app.use('/api/auth', authRoutes);
 
-module.exports = app;
+export default app;

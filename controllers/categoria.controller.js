@@ -1,6 +1,6 @@
-const Categoria = require('../models/Categoria');
+import Categoria from '../models/Categoria.js';
 
-exports.getCategorias = async (req, res) => {
+export const getCategorias = async (req, res) => {
   try {
     const { nombre, padre, limit = 20, offset = 0 } = req.query;
 
@@ -34,7 +34,7 @@ exports.getCategorias = async (req, res) => {
   }
 };
 
-exports.crearCategoria = async (req, res) => {
+export const crearCategoria = async (req, res) => {
   try {
     const nueva = new Categoria(req.body);
     await nueva.save();
@@ -44,7 +44,7 @@ exports.crearCategoria = async (req, res) => {
   }
 };
 
-exports.actualizarCategoria = async (req, res) => {
+export const actualizarCategoria = async (req, res) => {
   try {
     const actualizada = await Categoria.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!actualizada) return res.status(404).json({ error: 'Categoría no encontrada' });
@@ -54,7 +54,7 @@ exports.actualizarCategoria = async (req, res) => {
   }
 };
 
-exports.eliminarCategoria = async (req, res) => {
+export const eliminarCategoria = async (req, res) => {
   try {
     const eliminada = await Categoria.findByIdAndDelete(req.params.id);
     if (!eliminada) return res.status(404).json({ error: 'Categoría no encontrada' });

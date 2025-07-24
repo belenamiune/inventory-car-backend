@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const MovimientoSchema = new mongoose.Schema({
   tipo: {
@@ -41,4 +41,5 @@ const ProductoSchema = new mongoose.Schema({
   historialMovimientos: [MovimientoSchema],
 });
 
-module.exports = mongoose.model('Producto', ProductoSchema);
+const Producto = mongoose.model('Producto', ProductoSchema);
+export default Producto;

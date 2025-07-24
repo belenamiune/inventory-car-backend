@@ -1,6 +1,6 @@
-const Producto = require('../models/Producto');
+import Producto from '../models/Producto.js';
 
-exports.getProductos = async (req, res) => {
+export const getProductos = async (req, res) => {
   try {
     const { nombre, stockMenor, categoria, precioMin, precioMax, limit = 10, offset = 0 } = req.query;
 
@@ -43,7 +43,7 @@ exports.getProductos = async (req, res) => {
 };
 
 
-exports.getProductoById = async (req, res) => {
+export const getProductoById = async (req, res) => {
   try {
     const producto = await Producto.findById(req.params.id).populate('categorias');
     if (!producto) return res.status(404).json({ error: 'Producto no encontrado' });
@@ -53,7 +53,7 @@ exports.getProductoById = async (req, res) => {
   }
 };
 
-exports.crearProducto = async (req, res) => {
+export const crearProducto = async (req, res) => {
   try {
     const nuevoProducto = new Producto(req.body);
     await nuevoProducto.save();
@@ -63,7 +63,7 @@ exports.crearProducto = async (req, res) => {
   }
 };
 
-exports.actualizarProducto = async (req, res) => {
+export const actualizarProducto = async (req, res) => {
   try {
     const actualizado = await Producto.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!actualizado) return res.status(404).json({ error: 'Producto no encontrado' });
@@ -73,7 +73,7 @@ exports.actualizarProducto = async (req, res) => {
   }
 };
 
-exports.eliminarProducto = async (req, res) => {
+export const eliminarProducto = async (req, res) => {
   try {
     const eliminado = await Producto.findByIdAndDelete(req.params.id);
     if (!eliminado) return res.status(404).json({ error: 'Producto no encontrado' });

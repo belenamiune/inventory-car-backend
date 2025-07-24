@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const Producto = require('../models/Producto');
-const Categoria = require('../models/Categoria');
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import Producto  from '../models/Producto.js';
+import Categoria from '../models/Categoria.js';
 
 dotenv.config();
 
