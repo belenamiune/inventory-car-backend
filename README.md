@@ -104,7 +104,7 @@ Authorization: Bearer TU_TOKEN
 - `?padre=ID` → Subcategorías de una categoría específica
 - `?limit=` y `?offset=` → Paginación
 
-## Authors
+## Author
 
 - [@belenamiune](https://github.com/belenamiune)
 
