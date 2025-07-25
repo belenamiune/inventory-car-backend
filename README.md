@@ -30,7 +30,7 @@ Configurar .env: (Dejo esto para que sea de prueba, pero no deberia subirlo al R
 
 ```bash
 PORT=4000
-MONGO_URI=mongodb://localhost:27017/inventario
+MONGO_URI=mongodb+srv://belen:123456be@inventory.pj3isz5.mongodb.net/?retryWrites=true&w=majority&appName=inventory
 JWT_SECRET=mideseosecreto123
 ```
 --
@@ -103,6 +103,15 @@ Authorization: Bearer TU_TOKEN
 - `?padre=null` → Categorías raíz (sin categoría padre)
 - `?padre=ID` → Subcategorías de una categoría específica
 - `?limit=` y `?offset=` → Paginación
+
+
+## Repositorios del proyecto
+Este proyecto forma parte de un sistema completo
+
+| Parte     | Repo                                         |
+|-----------|----------------------------------------------|
+| Frontend  | [inventory-car-frontend](https://github.com/belenamiune/inventory-car-frontend)        |
+| Backend   | [inventory-car-backend](https://github.com/belenamiune/inventory-car-frontend)  
 
 ## Author
 
